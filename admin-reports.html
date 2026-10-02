@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Notice & Event Management Portal</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f7fb;color:#1f2937}
+header{background:#173b68;color:#fff;padding:17px 34px;display:flex;justify-content:space-between;align-items:center}.logo{font-size:21px;font-weight:700}.user{font-size:14px}
+.wrap{max-width:1160px;margin:30px auto;padding:0 24px}.title{margin-bottom:22px}.title h1{margin:0 0 5px;color:#173b68}.title p{margin:0;color:#64748b}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px}.card{background:#fff;border-radius:11px;box-shadow:0 6px 20px rgba(0,0,0,.07);padding:22px}.stat{border-left:4px solid #173b68}.stat .label{font-size:13px;color:#64748b}.stat .num{font-size:28px;font-weight:700;color:#173b68;margin-top:7px}
+.main{display:grid;grid-template-columns:1.45fr 1fr;gap:18px}.section-title{font-size:18px;font-weight:700;color:#173b68;margin-bottom:16px}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:11px 8px;border-bottom:1px solid #e5eaf0}th{color:#64748b;font-size:12px}
+.badge{display:inline-block;padding:4px 8px;border-radius:12px;background:#e9f0fa;color:#173b68;font-size:11px;font-weight:700}.ok{background:#e7f2ea;color:#25613a}
+.report{padding:14px;background:#f8fafc;border-radius:8px;margin-bottom:11px}.report strong{display:block;color:#173b68;margin-bottom:5px}.report span{font-size:13px;color:#64748b}
+.bar{height:9px;background:#e6ebf2;border-radius:8px;overflow:hidden;margin-top:8px}.fill{height:100%;background:#173b68;border-radius:8px}
+.actions{margin-top:18px;display:flex;gap:10px}.btn{padding:10px 16px;border:1px solid #cbd5e1;border-radius:7px;background:#fff;font-weight:600}.primary{background:#173b68;color:#fff;border-color:#173b68}
+@media(max-width:850px){.grid{grid-template-columns:1fr}.main{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="logo">College Notice & Event Management Portal</div><div class="user">Administrator • Admin Panel</div></header>
+<div class="wrap">
+<div class="title"><h1>Admin Dashboard & Reports</h1><p>Manage users, monitor notices and events, and view participation reports.</p></div>
+
+<div class="grid">
+<div class="card stat"><div class="label">Total Users</div><div class="num">248</div></div>
+<div class="card stat"><div class="label">Active Notices</div><div class="num">18</div></div>
+<div class="card stat"><div class="label">Upcoming Events</div><div class="num">12</div></div>
+</div>
+
+<div class="main">
+<div class="card">
+<div class="section-title">User Management</div>
+<table>
+<tr><th>User</th><th>Role</th><th>Status</th><th>Action</th></tr>
+<tr><td>Anandini Sahu</td><td>Student</td><td><span class="badge ok">Active</span></td><td>Manage</td></tr>
+<tr><td>Renuka Raya</td><td>Faculty</td><td><span class="badge ok">Active</span></td><td>Manage</td></tr>
+<tr><td>Batna Vishali</td><td>Faculty</td><td><span class="badge ok">Active</span></td><td>Manage</td></tr>
+<tr><td>Kuladeep</td><td>Coordinator</td><td><span class="badge ok">Active</span></td><td>Manage</td></tr>
+</table>
+<div class="actions"><button class="btn primary">Add User</button><button class="btn">Export Users</button></div>
+</div>
+
+<div class="card">
+<div class="section-title">Reports</div>
+<div class="report"><strong>Event Participation</strong><span>78% average registration rate</span><div class="bar"><div class="fill" style="width:78%"></div></div></div>
+<div class="report"><strong>Notice Engagement</strong><span>84% of students viewed recent notices</span><div class="bar"><div class="fill" style="width:84%"></div></div></div>
+<div class="report"><strong>Active Users</strong><span>92% accounts active this month</span><div class="bar"><div class="fill" style="width:92%"></div></div></div>
+<div class="actions"><button class="btn primary">View Full Report</button><button class="btn">Export</button></div>
+</div>
+</div>
+</div>
+</body>
+</html>
