@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Notice & Event Management Portal</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f7fb;color:#1f2937}
+header{background:#173b68;color:#fff;padding:17px 34px;display:flex;justify-content:space-between;align-items:center}.logo{font-size:21px;font-weight:700}.user{font-size:14px}
+.wrap{max-width:1150px;margin:34px auto;padding:0 24px}.card{background:#fff;border-radius:12px;box-shadow:0 7px 22px rgba(0,0,0,.07);padding:30px}
+.login{max-width:520px;margin:50px auto}.brand{font-size:14px;color:#173b68;font-weight:700;margin-bottom:15px}
+h1{margin:0 0 7px;color:#173b68}.sub{color:#64748b;margin-bottom:22px}
+.tabs{display:flex;gap:8px;margin-bottom:22px}.tabs button{flex:1;padding:12px;border:1px solid #d5dce6;background:#f8fafc;border-radius:8px;font-weight:600}.tabs .active{background:#173b68;color:#fff}
+label{display:block;font-size:14px;font-weight:600;margin:13px 0 6px}input,select,textarea{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:7px;font-size:15px}textarea{min-height:145px;resize:vertical}
+.primary{width:100%;margin-top:20px;padding:12px;background:#173b68;color:#fff;border:0;border-radius:7px;font-size:16px;font-weight:700}.hidden{display:none}.note{text-align:center;color:#64748b;font-size:13px;margin-top:16px}
+.page-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}.page-title p{color:#64748b;margin:5px 0 0}.form-card{max-width:850px;margin:auto}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:18px}.actions{display:flex;justify-content:flex-end;gap:10px;margin-top:22px}.secondary{padding:11px 20px;border:1px solid #cbd5e1;background:#fff;border-radius:7px;font-weight:600}.publish{padding:11px 24px;border:0;background:#173b68;color:#fff;border-radius:7px;font-weight:700}
+.badge{display:inline-block;background:#e9f0fa;color:#173b68;padding:5px 9px;border-radius:15px;font-size:12px;font-weight:700}
+@media(max-width:700px){.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div id="loginPage">
+<header><div class="logo">College Notice & Event Management Portal</div></header>
+<div class="wrap">
+<div class="card login">
+<div class="brand">KL UNIVERSITY • CAMPUS INFORMATION SYSTEM</div>
+<h1>Welcome Back</h1>
+<div class="sub">Sign in to access notices, events and reminders.</div>
+<label>Email</label><input id="email" type="email" placeholder="faculty@college.edu">
+<label>Password</label><input type="password" placeholder="Enter password">
+<label>Demo Role</label>
+<select id="role"><option>Student</option><option selected>Faculty</option><option>Administrator</option></select>
+<button class="primary" onclick="enterPortal()">Login</button>
+<div class="note">Secure role-based access • Notices • Events • Reminders</div>
+</div></div></div>
+
+<div id="facultyPage" class="hidden">
+<header><div class="logo">College Notice & Event Management Portal</div><div class="user">Faculty • Faculty Member</div></header>
+<div class="wrap">
+<div class="page-title"><div><h1>Post New Notice</h1><p>Create and publish an announcement for students.</p></div><span class="badge">Faculty Module</span></div>
+<div class="card form-card">
+<div class="row">
+<div><label>Notice Title</label><input placeholder="Enter notice title" value="Mid-Semester Examination Schedule Released"></div>
+<div><label>Category</label><select><option>Academic</option><option>Events</option><option>Placement</option><option>General</option></select></div>
+</div>
+<label>Notice Content</label>
+<textarea>Mid-semester examinations will begin from 15 October 2026. Students are requested to check the timetable and prepare according to their respective subjects.</textarea>
+<div class="row">
+<div><label>Target Audience</label><select><option>All Students</option><option>CSE Students</option><option>Second Year Students</option></select></div>
+<div><label>Expiry Date</label><input type="date" value="2026-10-20"></div>
+</div>
+<label>Attachment</label><input type="file">
+<div class="actions"><button class="secondary">Save Draft</button><button class="publish" onclick="alert('Notice published successfully.')">Publish Notice</button></div>
+</div>
+</div>
+</div>
+
+<script>
+function enterPortal(){
+ const role=document.getElementById('role').value;
+ if(role==='Faculty'){
+   document.getElementById('loginPage').classList.add('hidden');
+   document.getElementById('facultyPage').classList.remove('hidden');
+ } else { alert('For this screenshot, select Faculty from Demo Role and click Login.'); }
+}
+</script>
+</body>
+</html>
