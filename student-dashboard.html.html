@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Notice & Event Management Portal</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f7fb;color:#1f2937}
+header{background:#173b68;color:#fff;padding:17px 34px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:21px;font-weight:700}.user{font-size:14px}
+.wrap{max-width:1150px;margin:34px auto;padding:0 24px}.card{background:#fff;border-radius:12px;box-shadow:0 7px 22px rgba(0,0,0,.07);padding:30px}
+.login{max-width:520px;margin:50px auto}.brand{font-size:14px;color:#173b68;font-weight:700;margin-bottom:15px}
+h1{margin:0 0 7px;color:#173b68}.sub{color:#64748b;margin-bottom:22px}
+.tabs{display:flex;gap:8px;margin-bottom:22px}.tabs button{flex:1;padding:12px;border:1px solid #d5dce6;background:#f8fafc;border-radius:8px;font-weight:600}.tabs .active{background:#173b68;color:#fff}
+label{display:block;font-size:14px;font-weight:600;margin:13px 0 6px}input,select{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:7px;font-size:15px}
+.primary{width:100%;margin-top:20px;padding:12px;background:#173b68;color:#fff;border:0;border-radius:7px;font-size:16px;font-weight:700}.hidden{display:none}.note{text-align:center;color:#64748b;font-size:13px;margin-top:16px}
+.dashboard h1{margin-bottom:4px}.welcome{color:#64748b;margin-bottom:24px}
+.grid{display:grid;grid-template-columns:2fr 1fr;gap:20px}.section-title{font-size:18px;font-weight:700;color:#173b68;margin-bottom:14px}
+.notice{border:1px solid #e1e7ef;border-radius:9px;padding:16px;margin-bottom:12px;background:#fff}.notice h3{margin:0 0 6px;font-size:16px}.notice p{margin:4px 0;color:#64748b;font-size:14px}.important{display:inline-block;background:#e9f0fa;color:#173b68;padding:4px 8px;border-radius:12px;font-size:11px;font-weight:700;margin-bottom:8px}
+.event{background:#f8fafc;border-left:4px solid #173b68;padding:14px;margin-bottom:12px;border-radius:6px}.event h3{margin:0 0 7px;font-size:15px}.event p{margin:3px 0;font-size:13px;color:#64748b}
+.filters{display:flex;gap:10px;margin-bottom:18px}.filters input{max-width:330px}.filters select{max-width:180px}
+@media(max-width:800px){.grid{grid-template-columns:1fr}.filters{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+
+<div id="loginPage">
+<header><div class="logo">College Notice & Event Management Portal</div></header>
+<div class="wrap">
+<div class="card login">
+<div class="brand">KL UNIVERSITY • CAMPUS INFORMATION SYSTEM</div>
+<h1 id="title">Welcome Back</h1>
+<div class="sub" id="subtitle">Sign in to access notices, events and reminders.</div>
+<div class="tabs"><button id="loginTab" class="active" onclick="showLogin()">Login</button><button id="registerTab" onclick="showRegister()">Register</button></div>
+<form id="loginForm" onsubmit="login(event)">
+<label>Email</label><input type="email" placeholder="student@college.edu" required>
+<label>Password</label><input type="password" placeholder="Enter password" required>
+<button class="primary">Login</button>
+</form>
+<form id="registerForm" class="hidden" onsubmit="register(event)">
+<label>Full Name</label><input placeholder="Enter your name" required>
+<label>College Email</label><input type="email" placeholder="student@college.edu" required>
+<label>Roll Number / Employee ID</label><input placeholder="Enter ID" required>
+<label>Department</label><select required><option value="">Select department</option><option>CSE</option><option>ECE</option><option>EEE</option><option>Other</option></select>
+<label>Role</label><select required><option>Student</option><option>Faculty</option></select>
+<label>Password</label><input type="password" placeholder="Create password" required>
+<button class="primary">Create Account</button>
+</form>
+<div class="note">Secure role-based access • Notices • Events • Reminders</div>
+</div></div></div>
+
+<div id="dashboardPage" class="hidden">
+<header><div class="logo">College Notice & Event Management Portal</div><div class="user">Student • CSE &nbsp; | &nbsp; Anandini Sahu</div></header>
+<div class="wrap dashboard">
+<h1>Student Dashboard</h1>
+<div class="welcome">Welcome back! Here are the latest campus updates and upcoming events.</div>
+<div class="filters"><input placeholder="Search notices or events"><select><option>All Categories</option><option>Academic</option><option>Events</option><option>Placement</option><option>General</option></select></div>
+<div class="grid">
+<div class="card">
+<div class="section-title">Latest Notices</div>
+<div class="notice"><span class="important">IMPORTANT</span><h3>Mid-Semester Examination Schedule Released</h3><p>Academic • Posted today</p><p>Students can check the examination timetable and prepare according to their respective subjects.</p></div>
+<div class="notice"><h3>Placement Drive – Registration Open</h3><p>Placement • Posted yesterday</p><p>Eligible students can register for the upcoming campus recruitment drive.</p></div>
+<div class="notice"><h3>Workshop on Web Development</h3><p>Workshop • Posted 2 days ago</p><p>Registration is open for the hands-on web development workshop.</p></div>
+</div>
+<div class="card">
+<div class="section-title">Upcoming Events</div>
+<div class="event"><h3>Web Development Workshop</h3><p>05 Oct 2026 • 10:00 AM</p><p>Innovation Lab</p></div>
+<div class="event"><h3>Tech Club Orientation</h3><p>08 Oct 2026 • 2:00 PM</p><p>Seminar Hall</p></div>
+<div class="event"><h3>Campus Coding Contest</h3><p>12 Oct 2026 • 11:00 AM</p><p>Computer Lab</p></div>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+function showLogin(){loginForm.classList.remove('hidden');registerForm.classList.add('hidden');loginTab.classList.add('active');registerTab.classList.remove('active');title.textContent='Welcome Back';subtitle.textContent='Sign in to access notices, events and reminders.'}
+function showRegister(){loginForm.classList.add('hidden');registerForm.classList.remove('hidden');loginTab.classList.remove('active');registerTab.classList.add('active');title.textContent='Create Account';subtitle.textContent='Register for secure access to the campus portal.'}
+function login(e){e.preventDefault();loginPage.classList.add('hidden');dashboardPage.classList.remove('hidden')}
+function register(e){e.preventDefault();alert('Demo registration submitted.')}
+</script>
+</body>
+</html>
